@@ -1,0 +1,45 @@
+Starting new things
+1) Create new workspace
+ -> File -> Switch Workspace -> Other -> Browse
+2) Make new folder
+ -> Desktop -> CPSC270 -> Select folder as workspace 
+3) Launch new workspace
+
+
+New Assignment
+1) New Java Project
+ -> Create new project -> give name -> set java version to 8 or 1.8 -> next -> add library  -> add JUnit library 
+2) JUnit
+ -> Set to JUnit 4
+3) Place to put the files 
+ -> Right click new -> source folder -> name it problemcoverage
+4) Create interface 
+-> New -> Interface -> Give it a name -> Finish (this all goes into arc file)
+5) Create implement 
+-> New -> implement-> type name of file 
+6) Create ASG
+-> All in the book online
+
+
+Ex: public interface RationalADT(
+        Public void setD(int d) throws IllegalArgumentException -> sets D
+        
+        Public int getD(); -> returns D
+        
+Ex: In ASG needs state value(if not void) exception
+
+   group setD {
+      tests state1 {
+         test1: <1,2>.setD(3) -> <1,3>
+      }
+   }
+   
+   group getD{
+      tests value {
+         test1: <1,2>.getD() == 2
+      }
+      
+      tests state {
+         test1: <1,2>.getD() -> <1,2>
+      } 
+   }
