@@ -1,0 +1,91 @@
+Question 1 
+
+Question: 
+Write a problem instance that describes the behavior of the insert(char) method when the SeqADT has the following initial state:
+
+< a, b >
+
+You only have to write the problem instance itself, not the entire asg file. There is no need to write the group or the tests keywords. Write only the problem instance.
+
+Answer:
+<a,b>.insert(‘c’) -> <c, a, b>
+
+Question 2
+
+Question:
+Write one sentence that explains your problem instance.
+
+Answer:
+This problem instance inserts c to the beginning
+
+
+Question 3 
+
+Question:
+Write a JUnit test method that implements the problem instance you wrote above.
+
+Answer:
+@Test
+public void t1() {
+    SeqADT s = new Foo();
+    s.insert(‘b’);
+    s.insert(‘a’);
+    s.insert(‘c’);
+    assertEquals(‘c’, set.get(0));
+    assertEquals(‘a’, set.get(1));
+    assertEquals(‘b’, set.get(2));
+}
+
+
+
+Question 4
+
+Question:
+Briefly explain each step in  the JUnit method you wrote.
+
+Answer: Inserted the values of each element. Then used the assertEquals to check the value of the char at each element is in the right order. 
+
+
+Question 5:
+
+Question:
+Write the implementation of a Link class that stores a character and a pointer to the next Link object. The only method of this class is a constructor that takes a character and a Link reference variable.
+
+Answer: 
+public class Link{
+    char data;
+    Link next;
+    
+    public Link (char c, Link l) {
+        
+        data = c;
+        next = l;
+    }
+
+}
+
+
+Question 6:
+
+Question:
+Write a class named SeqIMP that implements the SeqADT interface using the Link class. Be sure to include any necessary data fields. NOTE: you only have to implement the insert(char) method. Don’t worry about the get(int) method.
+
+Answer:
+public class SeqIMP implements SeqADT{
+    Link head;
+    
+    public SeqIMP() {
+    
+    head = null;
+    
+    }
+    
+    public void insert (char c){ 
+        if (head == null){
+            head = new Link(*c, null);   
+        }
+        else {
+            head = new(Link(c,head));
+        }
+    }
+}
