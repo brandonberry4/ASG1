@@ -1,0 +1,64 @@
+asg TermADT {
+	adt = TermADT.java
+	impl = TermIMP.java
+
+	group add {
+		tests state {
+			addT: <t>.add() -> <t>
+		}
+
+		tests exception {
+			checkT: <t>.equals(t) !! IllegalArgumentException
+		}
+	}
+
+	group set {
+		tests state {
+			setCoef: <c,p>.set(0) -> <c>
+			setPow: <c,p>.set(1) -> <p>
+		}
+
+		tests exception {
+			negCoef: <4x5>.set(0) !! IllegalArgumentException
+			negPow: <4x5>.set(0) !! IllegalArgumentException
+		}
+	}
+	
+	group asString {
+		tests state {
+			setString: <4x5>.set() -> <newCoef x newPow>
+		}
+
+		tests exception {
+			emptyString: <>.isEmpty() == true
+		}
+	}
+
+	group eval {
+		tests state {
+			evaluate: <x>.insert() -> <x>
+		}
+
+	}
+
+	group getCoef {
+		tests state {
+			getCoef: <4x5>.get(0) -> <Coef>
+		}
+
+		tests exception {
+			notCoef: <4x5>.get(1) !! IllegalArgumentException
+		}
+	}
+
+	group getPow {
+		tests state {
+			getPow: <4x5>.get(1) -> <Pow>
+		}
+
+		tests exception {
+			notPow: <4x5>.get(0) !! IllegalArgumentException
+		}
+	}
+
+}
