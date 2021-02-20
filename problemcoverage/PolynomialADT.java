@@ -1,11 +1,10 @@
-
 /**
- *  Write a one-sentence summary of your class here.
- *  Follow it with additional details about its purpose, what abstraction
- *  it represents, and how to use it.
+ * A PolynomialADT is a sum of TermADTs. Here is an example: 5x3 + -4x2 Note
+ * that a PolynomialADT can be empty (contain no TermADTs). Empty PolynomialADTs
+ * evaluate to 0.
  * 
- *  @author 
- *  @version 
+ * @author Brandon Berry
+ * @version 02/19/2020
  */
 public interface PolynomialADT {
 

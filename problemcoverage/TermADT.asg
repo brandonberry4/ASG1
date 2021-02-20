@@ -23,7 +23,7 @@ asg TermADT {
 			negPow: <4x5>.set(0) !! IllegalArgumentException
 		}
 	}
-	
+
 	group asString {
 		tests state {
 			setString: <4x5>.set() -> <newCoef x newPow>

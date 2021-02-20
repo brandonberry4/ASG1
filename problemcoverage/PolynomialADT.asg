@@ -1,62 +1,62 @@
 asg PolynomialADT {
 	adt = PolynomialADT.java
 	impl = PolynomialIMP.java
-	
+
 	group PolynomialADT {
 		tests state {
 			addP: <p>.add() -> <p,p>
 		}
-		
+
 		tests value {
 			setP: <p>.set() -> <p>
 		}
-		
+
 		tests exception {
 			checkP: <p>.equals(t) !! IllegalArgumentException
-		}	
+		}
 	}
-	
+
 	group append {
 		tests state {
 			appendT: <t>.add() -> <t>
 		}
-		
+
 		tests exception {
 			emptyT: <>.isEmpty() == true
 		}
 	}
-	
+
 	group asString {
 		tests state {
 			setString: <5x2, 1x1>.set() -> <5x2, 1x1>
 		}
-		
+
 		tests value {
 			setValues: <5x2, 1x1>.get() == 5x2, 1x1
-			
+
 		}
-		
+
 		tests exception {
 			emptyString: <>.isEmpty() == true
 		}
 	}
-	
+
 	group eval {
 		tests state {
 			evaluate: <x>.insert() -> <x>
 		}
-		
+
 		tests exception {
 			eval0: <>.isEmpty() -> <0>
-			
+
 		}
 	}
-	
+
 	group remove {
 		tests state {
 			removeT: <t>.remove() -> <t>
 		}
-		
+
 		tests exception {
 			emptyT: <>.remove() !! IllegalArgumentException
 		}
